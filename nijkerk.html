@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welkom in Nijkerk</title>
+
+        <style>
+            .button {
+              
+            }
+        </style>
+
+    </head>
+    <body style="background-color:#1D569A;">
+        <H1 style="color:#1D569A;font-weight:600; background-color:white;margin:0px; padding:10px;">Welkom in Nijkerk!</H1>
+        <div style="color:white;padding:10px;">
+             <ul>
+               <li>Scan de QR code</li>
+               <li>Volg de instructies op je toestel totdat AR is geladen</li>
+               <li>Verplaats de oorsprong naar de ositie van de QR code</li>
+               <li>Tab op de afbeeldingen voor meer info</li>
+           </ul>
+           <button type="button" onclick="StartAR();" style="border:2px solid white; background-color: transparent;padding:10px;color:white;position: absolute;left: 50%;">START AR</button>
+           <p>&nbsp;</p>
+        </div>
+       <script>
+             const usdzSrc = 'https://aconit.github.io/nijkerk.usdz#custom=https://aconit.github.io/nijkerkbanner.html&allowsContentScaling=0';
+             const anchor = document.createElement('a');
+              anchor.setAttribute('rel', 'ar');
+              anchor.appendChild(document.createElement('img'));
+              anchor.setAttribute('href', usdzSrc);
+
+              anchor.addEventListener("message", function (event) {
+
+                try {
+                    location.replace("https://lekkernijkerk.nl/bedrijven/vvv-informatiepunt/")
+
+                } catch (error) {
+                    alert(error);
+       
+                }
+                }, false);
+
+                function StartAR()
+                {
+                    anchor.click();                
+                } 
+         </script>
+
+    </body>
+</html>

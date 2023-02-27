@@ -12,7 +12,7 @@
               anchor.setAttribute('href', usdzSrc);
 
               anchor.addEventListener("message", function (event) {
-
+                event.preventDefault();
                 try {
                     location.replace("https://www.eet-bewust.nu/aanbieding/")
 

@@ -4,29 +4,23 @@
         <title>Jumbo</title>
     </head>
     <body>
+          <a id="ar-link" rel="ar" href="https://aconit.github.io/jumbo.usdz#custom=https://aconit.github.io/jumbobanner.html&allowsContentScaling=0">  <img src="https://app.arinspace.com/images/transp.png"></a>
+      
          <script>
              window.addEventListener("error", (event) => {
                 alert(`${event.type}: ${event.message}\n`);
             });
              
         try{
-             const usdzSrc = 'https://aconit.github.io/jumbo.usdz#custom=https://aconit.github.io/jumbobanner.html&allowsContentScaling=0';
-             const anchor = document.createElement('a');
-              anchor.setAttribute('rel', 'ar');
-              anchor.appendChild(document.createElement('img'));
-              anchor.setAttribute('href', usdzSrc);
-
-              anchor.addEventListener("message", function (event) {
-                try {
+             const linkElement = document.getElementById("ar-link");
+             linkElement.addEventListener("message", function (event) {   
+                
+                if (event.data == "_apple_ar_quicklook_button_tapped") {
                     window.open("https://www.eet-bewust.nu/aanbieding/");
-
-                } catch (error) {
-                    alert(error);
-       
                 }
-                }, false);
+            }, false);
 
-              anchor.click();
+            linkElement.click();
     
             }catch (error) {
                     alert(error);

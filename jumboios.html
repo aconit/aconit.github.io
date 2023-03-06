@@ -5,6 +5,14 @@
     </head>
     <body>
          <script>
+             window.addEventListener("error", (event) => {
+                alert(`${event.type}: ${event.message}\n`);
+            });
+             
+             const x=10;
+             const y = 0;
+             let z = x/y;
+             
              const usdzSrc = 'https://aconit.github.io/jumbo.usdz#custom=https://aconit.github.io/jumbobanner.html&allowsContentScaling=0';
              const anchor = document.createElement('a');
               anchor.setAttribute('rel', 'ar');
